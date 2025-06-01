@@ -64,19 +64,4 @@ Build Movie-Search from the source and install dependencies:
 ### ▶️ Usage
 
 Run the project with:
-   npm start
-
----
-
-### 🧪 Testing
-
-Movie-Search uses the {test_framework} test framework. Run the test suite with:
-   npm test
-
-> Replace {test_framework} with the actual testing library used, such as Jest or Mocha.
-
----
-
-## 🔙 Return
-
-⬅ Return to top
+   npm run dev
