@@ -14,7 +14,6 @@ Built with the tools and technologies:
   - Prerequisites
   - Installation
   - Usage
-  - Testing
 
 ---
 
