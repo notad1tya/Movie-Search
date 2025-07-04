@@ -26,6 +26,28 @@ function MovieCard({movie}){
     return stars;
   };
 
+  // Format full release date
+  const formatReleaseDate = (dateString) => {
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
+
+  // Format short release date (for main card)
+  const formatShortDate = (dateString) => {
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    });
+  };
+
   return(
     <div className = "movie-card">
       <div className="movie-poster">
@@ -44,7 +66,7 @@ function MovieCard({movie}){
               </div>
               <p className="hover-overview">{truncateOverview(movie.overview)}</p>
               <div className="hover-details">
-                <span className="release-year">{movie.release_date?.split("-")[0]}</span>
+                <span className="release-date">{formatReleaseDate(movie.release_date)}</span>
                 <span className="vote-count">{movie.vote_count} votes</span>
               </div>
             </div>
@@ -52,7 +74,7 @@ function MovieCard({movie}){
       </div>
       <div className = "movie-info">
         <h3>{movie.title}</h3>
-        <p>{movie.release_date?.split("-")[0]}</p>
+        <p>{formatShortDate(movie.release_date)}</p>
       </div>
     </div>
   )
